@@ -48,8 +48,7 @@ public class PersonRepository implements BaseLdapNameAware{
     public Person findOne(String cn) {
         Name dn = LdapNameBuilder.newInstance(baseLdapPath)
                 .add("ou", "people")
-                .add("cn", cn)
-                //.add("uid", uid)
+                .add("cn", cn)                
                 .build();
         return ldapTemplate.lookup(dn, new PersonContextMapper());
     }
@@ -77,8 +76,7 @@ public class PersonRepository implements BaseLdapNameAware{
 
     private Name buildDn(Person p) {
         return LdapNameBuilder.newInstance(baseLdapPath)
-                .add("ou", "people")
-                //.add("uid", p.getUid())                
+                .add("ou", "people")                              
                 .add("cn", p.getFullName())
                 .build();
     }
