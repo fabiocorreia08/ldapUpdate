@@ -8,7 +8,7 @@ import org.springframework.ldap.core.support.BaseLdapPathBeanPostProcessor;
 @Configuration
 public class LdapConfig {
 	
-	@Value("${spring.ldap.embedded.base-dn}")
+	@Value("${spring.ldap.base}")
     private String baseDn;
 
     @Bean
